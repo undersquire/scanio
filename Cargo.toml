@@ -7,7 +7,7 @@ description = "Simple console input macros with the goal of being implemented in
 homepage = "https://github.com/undersquire/scanio"
 repository = "https://github.com/undersquire/scanio"
 readme = "README.md"
-keywords = ["io", "read", "scan", "input", "macro", "simple"]
+keywords = ["io", "read", "scan", "input", "macro"]
 
 [lib]
 name = "scanio"
