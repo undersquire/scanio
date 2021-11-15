@@ -1,7 +1,5 @@
 # scanio
-Simple console input macros with the goal of being implemented in the standard library.
-
-RFC: https://github.com/rust-lang/rfcs/pull/3183
+**RFC: https://github.com/rust-lang/rfcs/pull/3183**
 
 This crate is the testing/WIP implementation of some simple macros for generic text input scanning (to accompany the `print` family of macros).
 
