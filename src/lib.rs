@@ -1,7 +1,6 @@
 use std::io::{BufRead, BufReader, Read};
 
-// NOTE: This doesnt work yet
-// TODO: Finish this
+// TODO: Finish implementing input formatting
 pub fn _read<T: std::str::FromStr>(stream: &mut dyn std::io::Read, pattern: &str) -> Result<T, ()> {
     static EOF: &[u8] = b"\t\r\n ";
 
