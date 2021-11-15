@@ -41,4 +41,4 @@ fn main() {
 }
 ```
 
-The `read!` and `try_read!` macros work exactly the same, however their first argument must be a mutable referecne to an object that implements the `std::io::Read` trait, such as `std::io::stdin()` or a `File`.
+The `read!` and `try_read!` macros work exactly the same, however their first argument must be a mutable reference to an object that implements the `std::io::Read` trait, such as `std::io::stdin()` or a `File`.
