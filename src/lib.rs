@@ -16,7 +16,7 @@ fn _next_fmt(pattern: &mut String) -> String {
         if split.len() > 1 {
             result += split[1];
 
-            if let Some(c) = split[1].chars().nth(0) {
+            if let Some(c) = split[1].chars().next() {
                 remove += c.to_string().as_str();
             }
         }
@@ -45,7 +45,7 @@ pub fn _read<T: std::str::FromStr>(
                     let next = pattern.next();
 
                     loop {
-                        let mut buf = [0 as u8];
+                        let mut buf = [0_u8];
 
                         let buf = match stream.read_exact(&mut buf) {
                             Ok(_) => Some(buf[0]),
@@ -54,11 +54,19 @@ pub fn _read<T: std::str::FromStr>(
 
                         match buf {
                             Some(x) => {
-                                if (next.is_some() && x == next.unwrap()) || EOF.contains(&x) {
-                                    break 'parse;
+                                if let Some(next) = next {
+                                    if x == next {
+                                        break 'parse;
+                                    }
+                                } else {
+                                    if EOF.contains(&x) {
+                                        break 'parse;
+                                    }
                                 }
 
-                                input.push(x as char);
+                                if !EOF.contains(&x) {
+                                    input.push(x as char);
+                                }
                             }
                             None => return Err(()),
                         }
@@ -68,7 +76,7 @@ pub fn _read<T: std::str::FromStr>(
                 None => return Err(()),
             },
             Some(c) => {
-                let mut buf = [0 as u8];
+                let mut buf = [0_u8];
 
                 let buf = match stream.read_exact(&mut buf) {
                     Ok(_) => Some(buf[0]),
