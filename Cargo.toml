@@ -8,6 +8,7 @@ homepage = "https://github.com/undersquire/scanio"
 repository = "https://github.com/undersquire/scanio"
 readme = "README.md"
 keywords = ["io", "read", "scan", "input", "macro"]
+license = "MIT"
 
 [lib]
 name = "scanio"
