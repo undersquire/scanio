@@ -6,7 +6,7 @@ RFC: https://github.com/rust-lang/rfcs/pull/3183
 This crate is the testing/WIP implementation of some simple macros for generic text input scanning (to accompany the `print` family of macros).
 This crate currently implements two macros, `scan!` and `try_scan!`.
 
-## The implementation for these macros are experimental so use at your own risk.
+## The implementation for these macros is experimental so use at your own risk.
 
 `scan!` usage:
 
