@@ -27,7 +27,6 @@ fn _next_fmt(pattern: &mut String) -> String {
     result
 }
 
-// TODO: Finish implementing input formatting
 pub fn _read<T: std::str::FromStr>(
     stream: &mut dyn std::io::Read,
     pattern: &mut String,
