@@ -30,13 +30,13 @@ fn main() {
 
 ```rust
 #[macro_use]
-extern crate scanip;
+extern crate scanio;
 
 fn main() {
     // returns a Result<(String, u8), ()>, which we unwrap
     let person = try_scan!("{} {}", String, u8).expect("Invalid input!");
     
-    // ideally you should `match` on the result but this is example so :shrug:
+    // ideally you should `match` on the result but this is an example so :shrug:
     
     println!("{} of age {}", person.0, person.1);
 }
