@@ -2,7 +2,7 @@
 extern crate scanio;
 
 #[test]
-fn scan_fmt() {
+fn main() {
     println!("input any number:");
 
     let num: i32;
