@@ -4,7 +4,7 @@ Simple console input macros with the goal of being implemented in the standard l
 RFC: https://github.com/rust-lang/rfcs/pull/3183
 
 This crate is the testing/WIP implementation of some simple macros for generic text input scanning (to accompany the `print` family of macros).
-This crate currently implements two macros, `scan!` and `try_scan!`.
+This crate currently implements four macros, `scan!`, `try_scan!`, `read!` and `try_read!`.
 
 ## The implementation for these macros is experimental.
 
@@ -41,3 +41,5 @@ fn main() {
     println!("{} of age {}", person.0, person.1);
 }
 ```
+
+The `read!` and `try_read!` macros work exactly the same, however their first argument must be a mutable referecne to an object that implements the `std::io::Read` trait, such as `std::io::stdin()` or a `File`.
