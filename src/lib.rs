@@ -12,7 +12,7 @@ pub fn _read<T: std::str::FromStr>(stream: &mut dyn std::io::Read, pattern: &str
     loop {
         let mut buf = [0; 1];
 
-        stream.read(&mut buf).unwrap();
+        stream.read_exact(&mut buf).unwrap();
 
         if EOF.contains(&buf[0]) {
             break;

@@ -2,34 +2,39 @@
 extern crate scanio;
 
 #[test]
-fn basic() {
-    let age = try_scan!(u8).unwrap();
+fn scan_fmt() {
+    println!("input any number:");
 
-    println!("{}", age);
-}
+    let num: i32;
 
-#[test]
-fn basic_read() {
-    let age: u8;
+    scan!(num);
 
-    scan!(age);
+    println!("You entered: {}", num);
 
-    println!("{}", age);
-}
+    //
 
-#[test]
-fn read_to_tuple() {
-    let person = try_scan!("{} {}", String, u8).unwrap();
+    println!("input your name and age:");
 
-    println!("{} of age {}", person.0, person.1);
-}
-
-#[test]
-fn declare_and_read() {
     let name: String;
     let age: u8;
 
     scan!("{} {}", name, age);
 
-    println!("{} of age {}", name, age);
+    println!("Hello {}! You are {} years old!", name, age);
+
+    //
+
+    println!("input the current year:");
+
+    let year = try_scan!(u16).expect("Invalid year!");
+
+    println!("It is currently the year {}!", year);
+
+    //
+
+    println!("input someone else's name and age:");
+
+    let person = try_scan!("{} {}", String, u8).expect("Invalid input!");
+
+    println!("Name: {}, Age: {}", person.0, person.1);
 }
